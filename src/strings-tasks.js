@@ -43,9 +43,15 @@ getStringLength();
  *   isString(new String('test')) => true
  */
 
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  if (value !== undefined && value !== null) {
+    if (typeof value === 'string' || typeof value.valueOf() === 'string') {
+      return true;
+    }
+  }
+  return false;
 }
+isString();
 
 /**
  * Returns the result of concatenation of two strings.
