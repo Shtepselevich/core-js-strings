@@ -42,9 +42,10 @@ getStringLength();
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(content) {
+  return typeof content === 'string';
 }
+isString();
 
 /**
  * Returns the result of concatenation of two strings.
