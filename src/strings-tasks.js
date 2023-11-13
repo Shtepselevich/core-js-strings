@@ -42,10 +42,10 @@ getStringLength();
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(content) {
-  return typeof content === 'string';
+
+function isString(/* value */) {
+  throw new Error('Not implemented');
 }
-isString();
 
 /**
  * Returns the result of concatenation of two strings.
@@ -59,9 +59,23 @@ isString();
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  if (typeof value1 === 'string' && typeof value2 === 'string') {
+    if (value1 === '' && !value2 === '') {
+      return value2;
+    }
+    if (value2 === '' && !value1 === '') {
+      return value1;
+    }
+    if (value1 === '' && value2 === '') {
+      return '';
+    }
+    const resultOfConcatenate = value1.concat(value2);
+    return resultOfConcatenate;
+  }
+  return '';
 }
+concatenateStrings();
 
 /**
  * Returns the first character of the given string.
