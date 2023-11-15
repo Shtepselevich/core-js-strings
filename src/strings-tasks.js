@@ -94,9 +94,13 @@ concatenateStrings();
  *   getFirstChar('cat') => 'c'
  *   getFirstChar('') => ''
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  if (typeof value === 'string' && value !== '') {
+    return value.charAt(0);
+  }
+  return '';
 }
+getFirstChar();
 
 /**
  * Removes leading and trailing whitespace characters from the string.
@@ -109,10 +113,13 @@ function getFirstChar(/* value */) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  if (typeof value === 'string' && value !== '') {
+    return value.trim();
+  }
+  return '';
 }
-
+removeLeadingAndTrailingWhitespaces();
 /**
  * Removes only leading whitespace characters from the string.
  *
