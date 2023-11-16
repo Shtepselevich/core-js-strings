@@ -131,10 +131,13 @@ removeLeadingAndTrailingWhitespaces();
  *   removeLeadingWhitespaces('cat ') => 'cat '
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
-function removeLeadingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingWhitespaces(value) {
+  if (typeof value === 'string' && value !== '') {
+    return value.trimStart();
+  }
+  return '';
 }
-
+removeLeadingWhitespaces();
 /**
  * Removes only trailing whitespace characters from the string.
  *
@@ -146,9 +149,13 @@ function removeLeadingWhitespaces(/* value */) {
  *   removeTrailingWhitespaces('cat ') => 'cat'
  *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
  */
-function removeTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeTrailingWhitespaces(value) {
+  if (typeof value === 'string' && value !== '') {
+    return value.trimEnd();
+  }
+  return '';
 }
+removeTrailingWhitespaces();
 
 /**
  * Returns a string that is repeated the specified number of times.
@@ -163,9 +170,13 @@ function removeTrailingWhitespaces(/* value */) {
  *   repeatString('', 3) => ''
  *   repeatString('abc', -2) => ''
  */
-function repeatString(/* str, times */) {
-  throw new Error('Not implemented');
+function repeatString(str, time) {
+  if (typeof str === 'string' && str !== '' && time > 0) {
+    return str.repeat(time);
+  }
+  return '';
 }
+repeatString();
 
 /**
  * Remove the first occurrence of a substring from a string.
